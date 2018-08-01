@@ -8,7 +8,8 @@ class Blink extends React.Component {
 
     // Toggle the state every second
     setInterval(() => {
-      this.props.text="";
+      this.props.text = ' ';
+      console.log(this.props.text);
     }, 1000);
     setInterval(() => {
       this.setState(previousState => {
@@ -28,11 +29,19 @@ class Blink extends React.Component {
 export default class App extends React.Component {
   render() {
     return (
-      <View>
-        <Blink text='I love to blink' />
-        <Blink text='Yes blinking is so great' />
-        <Blink text='Why did they ever take this out of HTML' />
-        <Blink text='Look at me look at me look at me' />
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: 'powderblue'}}>
+          <Blink text='I love to blink' />
+        </View>
+        <View style={{flex: 2, backgroundColor: 'steelblue'}}>
+          <Blink text='Yes blinking is so great' />
+        </View>
+        <View style={{flex: 1, backgroundColor: 'skyblue'}}>
+          <Blink text='Why did they ever take this out of HTML' />
+        </View>
+        <View style={{flex: 3, backgroundColor: 'powderblue'}}>
+          <Blink text='Look at me look at me look at me' />
+        </View>
       </View>
     );
   }
